@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 var WebpackConfig = require('webpack-config');
+var path = require('path');
 
 module.exports = new WebpackConfig.Config().extend('./webpack/config-maker.js').merge({
     plugins: [
@@ -8,5 +9,12 @@ module.exports = new WebpackConfig.Config().extend('./webpack/config-maker.js').
             'process.env.NODE_ENV': JSON.stringify('production')
         }),
         new webpack.HotModuleReplacementPlugin(),
-    ]
+    ],
+    output: {
+        path: path.join(__dirname, '../dist'),
+        filename: '[name].js',
+        sourceMapFilename: '[file].map',
+        clearBeforeBuild: true,
+        publicPath: '../dist'
+    },
 });
