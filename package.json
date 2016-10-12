@@ -67,7 +67,7 @@
   "scripts": {
     "dev": "node server.js",
     "start": "webpack-dev-server --config ./webpack/dev.js --progress --colors --port 8010",
-    "build": "webpack --config ./webpack/prod.js --progress --colors --hot --inline"
+    "build": "webpack --config ./webpack/prod.js --progress --colors"
   },
   "author": "fao",
   "license": "ISC"
