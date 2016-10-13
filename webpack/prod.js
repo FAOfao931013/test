@@ -10,10 +10,8 @@ module.exports = new WebpackConfig.Config().extend('./webpack/config-maker.js').
         }),
         new webpack.HotModuleReplacementPlugin()
     ],
-    // devServer: {
-    //     headers: {
-    //         'Access-Control-Allow-Origin': '*',
-    //         'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
-    //     }
-    // }
+    devServer: {
+        inline: false,
+        hot: false
+    }
 });
