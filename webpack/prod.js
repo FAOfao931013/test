@@ -8,5 +8,7 @@ module.exports = new WebpackConfig.Config().extend('./webpack/config-maker.js').
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
         }),
+        new webpack.HotModuleReplacementPlugin(),
+
     ],
 });
