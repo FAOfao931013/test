@@ -10,6 +10,12 @@ module.exports = new WebpackConfig.Config().extend('./webpack/config-maker.js').
         }),
         new webpack.HotModuleReplacementPlugin()
     ],
+    entry: {
+        entry: [
+            // 'webpack/hot/only-dev-server',
+            path.join(__dirname, '../src/entry.js')
+        ]
+    },
     // devServer: {
     //     inline: false,
     //     hot: false
