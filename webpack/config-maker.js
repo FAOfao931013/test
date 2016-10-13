@@ -18,7 +18,11 @@ var paths = {
 
 var config = {
     entry: {
-        entry: [hotMiddlewareScript, path.join(__dirname, '../src/entry.js')]
+        entry: [
+            hotMiddlewareScript,
+            'webpack/hot/only-dev-server',
+            path.join(__dirname, '../src/entry.js')
+        ]
     },
 
     devtool: '#source-map',
@@ -77,4 +81,3 @@ var config = {
 };
 
 module.exports = new WebpackConfig.Config().merge(config);
-
