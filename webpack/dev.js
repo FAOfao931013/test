@@ -3,7 +3,6 @@ var WebpackConfig = require('webpack-config');
 var path = require('path');
 var hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
 
-
 module.exports = new WebpackConfig.Config().extend('./webpack/config-maker.js').merge({
     plugins: [
         new webpack.optimize.OccurenceOrderPlugin(),
@@ -13,7 +12,6 @@ module.exports = new WebpackConfig.Config().extend('./webpack/config-maker.js').
     entry: {
         entry: [
             hotMiddlewareScript,
-            // 'webpack/hot/only-dev-server',
             path.join(__dirname, '../src/entry.js')
         ]
     },
