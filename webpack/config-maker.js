@@ -1,8 +1,8 @@
 var styleLintPlugin = require('stylelint-webpack-plugin');
 var WebpackConfig = require('webpack-config');
 var path = require('path');
-// var hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
-var hotMiddlewareScript = 'webpack-hot-middleware/client?http://localhost:8010';
+var hotMiddlewareScript = 'webpack-hot-middleware/client?reload=true';
+// var hotMiddlewareScript = 'webpack-hot-middleware/client?http://localhost:8010';
 
 var paths = {
     components: path.join(__dirname, '../src/components'),
@@ -18,7 +18,11 @@ var paths = {
 
 var config = {
     entry: {
-        entry: [hotMiddlewareScript, path.join(__dirname, '../src/entry.js')]
+        entry: [
+            hotMiddlewareScript,
+            // 'webpack/hot/only-dev-server',
+            path.join(__dirname, '../src/entry.js')
+        ]
     },
 
     devtool: '#source-map',
@@ -77,4 +81,3 @@ var config = {
 };
 
 module.exports = new WebpackConfig.Config().merge(config);
-
