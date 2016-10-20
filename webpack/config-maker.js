@@ -44,6 +44,10 @@ var config = {
             {
                 test: /\.less$/,
                 loader: "style!css!less"
+            },
+            {
+                test: /\.(jpg|jpeg|png|gif|svg|woff|woff2|ttf|eot)$/,
+                loader: 'url-loader'
             }
 
         ]

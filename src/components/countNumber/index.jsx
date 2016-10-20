@@ -1,4 +1,5 @@
 import React from 'react';
+import './style.less';
 
 class CountNumber extends React.Component {
     constructor(props) {
@@ -19,7 +20,7 @@ class CountNumber extends React.Component {
             } = this.props;
 
         return (
-            <div>
+            <div className='count-number'>
                 <button onClick={addNumber}>加</button>
                 <button onClick={minusNumber}>减</button>
                 <button onClick={InitializeNumber}>清零</button>
